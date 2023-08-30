@@ -1,0 +1,25 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="All rights reserved"
+[[mods]]
+modId="net"
+version="${file.jarVersion}"
+displayName="Not Enough Trees"
+logoFile="net.png"
+credits=""
+authors="LovelyBunny"
+description='''
+Explore the big world to find every tree kind!
+'''
+[[dependencies.net]]
+    modId="forge"
+    versionRange="[40,)"
+    mandatory=true
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.net]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2]"
+    ordering="NONE"
+    side="BOTH"
