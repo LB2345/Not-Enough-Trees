@@ -51,17 +51,22 @@ public class NETMod
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        WoodType.register(NETWoodTypes.POPLAR);
-        BlockEntityRenderers.register(NETBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
+        //Renderers
+        ItemBlockRenderTypes.setRenderLayer(NETBlocks.POPLAR_SAPLING.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(NETBlocks.POPLAR_LEAVES.get(), RenderType.cutoutMipped());
 
+        BlockEntityRenderers.register(NETBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
+        EntityRenderers.register(NETEntities.BOAT.get(), NETBoatRenderer::new);
+        //Woodtypes
+        Sheets.addWoodType(NETWoodTypes.POPLAR);
+
+        WoodType.register(NETWoodTypes.POPLAR);
+        //Strippables
         event.enqueueWork(() -> {
             AxeItem.STRIPPABLES = new ImmutableMap.Builder<Block, Block>().putAll(AxeItem.STRIPPABLES)
                     .put(NETBlocks.POPLAR_LOG.get(), NETBlocks.STRIPPED_POPLAR_LOG.get())
                     .put(NETBlocks.POPLAR_WOOD.get(), NETBlocks.STRIPPED_POPLAR_WOOD.get()).build();
         });
-        ItemBlockRenderTypes.setRenderLayer(NETBlocks.POPLAR_SAPLING.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(NETBlocks.POPLAR_LEAVES.get(), RenderType.cutout());
-        Sheets.addWoodType(NETWoodTypes.POPLAR);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
