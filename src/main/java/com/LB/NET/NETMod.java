@@ -1,6 +1,5 @@
 package com.BubbleTeaM.NET;
 
-import com.BubbleTeaM.NET.client.render.NETBoatRenderer;
 import com.BubbleTeaM.NET.common.block.NETBlocks;
 import com.BubbleTeaM.NET.common.block.entity.NETBlockEntities;
 import com.BubbleTeaM.NET.common.block.entity.NETWoodTypes;
@@ -11,14 +10,9 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.client.renderer.blockentity.SignRenderer;
-import net.minecraft.client.renderer.entity.BoatRenderer;
-import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -57,9 +51,6 @@ public class NETMod {
         ItemBlockRenderTypes.setRenderLayer(NETBlocks.POPLAR_LEAVES.get(), RenderType.cutoutMipped());
         ItemBlockRenderTypes.setRenderLayer(NETBlocks.ENDBURST_SAPLING.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(NETBlocks.ENDBURST_LEAVES.get(), RenderType.cutoutMipped());
-
-        BlockEntityRenderers.register(NETBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
-        EntityRenderers.register(NETEntities.BOAT.get(), BoatRenderer::new);
         //Woodtypes
         Sheets.addWoodType(NETWoodTypes.POPLAR);
         Sheets.addWoodType(NETWoodTypes.ENDBURST);
@@ -76,25 +67,18 @@ public class NETMod {
         });
     }
 
-    private void enqueueIMC(final InterModEnqueueEvent event)
-    {
+    private void enqueueIMC(final InterModEnqueueEvent event) {
     }
 
-    private void processIMC(final InterModProcessEvent event)
-    {
+    private void processIMC(final InterModProcessEvent event) {
     }
 
     @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event)
-    {
+    public void onServerStarting(ServerStartingEvent event) {
     }
 
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class RegistryEvents
-    {
-        @SubscribeEvent
-        public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-            event.registerEntityRenderer(NETEntities.BOAT.get(), NETBoatRenderer::new);
-        }
+    public static class RegistryEvents {
     }
 }
+
