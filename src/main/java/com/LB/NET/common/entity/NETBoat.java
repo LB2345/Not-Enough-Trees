@@ -2,39 +2,22 @@ package com.BubbleTeaM.NET.common.entity;
 
 import com.BubbleTeaM.NET.common.block.NETBlocks;
 import com.BubbleTeaM.NET.common.item.NETItems;
-import com.BubbleTeaM.NET.mixin.BoatAccess;
-import net.minecraft.core.BlockPos;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
-import net.minecraft.network.protocol.game.ClientboundAddEntityPacket;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.tags.FluidTags;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.IndirectEntityDamageSource;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.NetworkHooks;
-
-import java.util.Arrays;
 
 public class NETBoat extends Boat {
     private static final EntityDataAccessor<Integer> DATA_ID_TYPE = SynchedEntityData.defineId(NETBoat.class, EntityDataSerializers.INT);
 
-    public NETBoat(EntityType<? extends Boat> p_i50129_1_, Level p_i50129_2_) {
+    public NETBoat(EntityType<? extends NETBoat> p_i50129_1_, Level p_i50129_2_) {
         super(p_i50129_1_, p_i50129_2_);
         this.blocksBuilding = true;
     }
@@ -51,6 +34,7 @@ public class NETBoat extends Boat {
     public Item getDropItem() {
         return switch (this.getModBoatType()) {
             case POPLAR -> NETItems.POPLAR_BOAT.get();
+            case ENDBURST -> NETItems.ENDBURST_BOAT.get();
         };
     }
 
@@ -68,7 +52,8 @@ public class NETBoat extends Boat {
     }
 
     public static enum Type {
-        POPLAR(NETBlocks.POPLAR_PLANKS.get(), "poplar");
+        POPLAR(NETBlocks.POPLAR_PLANKS.get(), "poplar"),
+        ENDBURST(NETBlocks.ENDBURST_PLANKS.get(), "endburst");
 
         private final String name;
         private final Block planks;
@@ -117,4 +102,3 @@ public class NETBoat extends Boat {
         return NetworkHooks.getEntitySpawningPacket(this);
     }
 }
-
