@@ -1,5 +1,6 @@
 package com.BubbleTeaM.NET;
 
+import com.BubbleTeaM.NET.client.render.NETBoatRenderer;
 import com.BubbleTeaM.NET.common.block.NETBlocks;
 import com.BubbleTeaM.NET.common.block.entity.NETBlockEntities;
 import com.BubbleTeaM.NET.common.block.entity.NETWoodTypes;
@@ -12,9 +13,12 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
+import net.minecraft.client.renderer.entity.BoatRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -28,14 +32,11 @@ import org.slf4j.Logger;
 
 
 @Mod(value = NETMod.MOD_ID)
-public class NETMod
-{
+public class NETMod {
     private static final Logger LOGGER = LogUtils.getLogger();
     public static final String MOD_ID = "net";
-    public NETMod()
-    {
+    public NETMod() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
         NETBlocks.register(eventBus);
         NETItems.register(eventBus);
         NETEntities.register(eventBus);
@@ -54,18 +55,24 @@ public class NETMod
         //Renderers
         ItemBlockRenderTypes.setRenderLayer(NETBlocks.POPLAR_SAPLING.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(NETBlocks.POPLAR_LEAVES.get(), RenderType.cutoutMipped());
+        ItemBlockRenderTypes.setRenderLayer(NETBlocks.ENDBURST_SAPLING.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(NETBlocks.ENDBURST_LEAVES.get(), RenderType.cutoutMipped());
 
         BlockEntityRenderers.register(NETBlockEntities.SIGN_BLOCK_ENTITIES.get(), SignRenderer::new);
-        EntityRenderers.register(NETEntities.BOAT.get(), NETBoatRenderer::new);
+        EntityRenderers.register(NETEntities.BOAT.get(), BoatRenderer::new);
         //Woodtypes
         Sheets.addWoodType(NETWoodTypes.POPLAR);
+        Sheets.addWoodType(NETWoodTypes.ENDBURST);
 
         WoodType.register(NETWoodTypes.POPLAR);
+        WoodType.register(NETWoodTypes.ENDBURST);
         //Strippables
         event.enqueueWork(() -> {
             AxeItem.STRIPPABLES = new ImmutableMap.Builder<Block, Block>().putAll(AxeItem.STRIPPABLES)
                     .put(NETBlocks.POPLAR_LOG.get(), NETBlocks.STRIPPED_POPLAR_LOG.get())
-                    .put(NETBlocks.POPLAR_WOOD.get(), NETBlocks.STRIPPED_POPLAR_WOOD.get()).build();
+                    .put(NETBlocks.POPLAR_WOOD.get(), NETBlocks.STRIPPED_POPLAR_WOOD.get())
+                    .put(NETBlocks.ENDBURST_LOG.get(), NETBlocks.STRIPPED_ENDBURST_LOG.get())
+                    .put(NETBlocks.ENDBURST_WOOD.get(), NETBlocks.STRIPPED_ENDBURST_WOOD.get()).build();
         });
     }
 
@@ -85,5 +92,9 @@ public class NETMod
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents
     {
+        @SubscribeEvent
+        public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerEntityRenderer(NETEntities.BOAT.get(), NETBoatRenderer::new);
+        }
     }
 }
