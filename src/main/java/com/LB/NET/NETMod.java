@@ -12,6 +12,8 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FireBlock;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -64,19 +66,40 @@ public class NETMod {
                     .put(NETBlocks.POPLAR_WOOD.get(), NETBlocks.STRIPPED_POPLAR_WOOD.get())
                     .put(NETBlocks.ENDBURST_LOG.get(), NETBlocks.STRIPPED_ENDBURST_LOG.get())
                     .put(NETBlocks.ENDBURST_WOOD.get(), NETBlocks.STRIPPED_ENDBURST_WOOD.get()).build();
+        });        event.enqueueWork(() -> {
+            FireBlock.bootStrap();
+            FireBlock fireblock = (FireBlock) Blocks.FIRE;
+            fireblock.setFlammable(NETBlocks.POPLAR_PLANKS.get(), 5, 20);
+            fireblock.setFlammable(NETBlocks.ENDBURST_PLANKS.get(), 5, 20);
+            fireblock.setFlammable(NETBlocks.POPLAR_LOG.get(), 5, 20);
+            fireblock.setFlammable(NETBlocks.ENDBURST_LOG.get(), 5, 20);
+            fireblock.setFlammable(NETBlocks.POPLAR_SLAB.get(), 5, 20);
+            fireblock.setFlammable(NETBlocks.ENDBURST_SLAB.get(), 5, 20);
+            fireblock.setFlammable(NETBlocks.POPLAR_STAIRS.get(), 5, 20);
+            fireblock.setFlammable(NETBlocks.ENDBURST_STAIRS.get(), 5, 20);
+            fireblock.setFlammable(NETBlocks.POPLAR_LEAVES.get(), 5, 20);
+            fireblock.setFlammable(NETBlocks.ENDBURST_LEAVES.get(), 5, 20);
+            fireblock.setFlammable(NETBlocks.POPLAR_FENCE.get(), 5, 20);
+            fireblock.setFlammable(NETBlocks.ENDBURST_FENCE.get(), 5, 20);
+            fireblock.setFlammable(NETBlocks.POPLAR_FENCE_GATE.get(), 5, 5);
+            fireblock.setFlammable(NETBlocks.ENDBURST_FENCE_GATE.get(), 5, 5);
+            fireblock.setFlammable(NETBlocks.STRIPPED_POPLAR_LOG.get(), 5, 5);
+            fireblock.setFlammable(NETBlocks.STRIPPED_ENDBURST_LOG.get(), 5, 5);
+            fireblock.setFlammable(NETBlocks.STRIPPED_POPLAR_WOOD.get(), 5, 5);
+            fireblock.setFlammable(NETBlocks.STRIPPED_ENDBURST_WOOD.get(), 5, 5);
+            fireblock.setFlammable(NETBlocks.POPLAR_WOOD.get(), 5, 5);
+            fireblock.setFlammable(NETBlocks.ENDBURST_WOOD.get(), 5, 5);
         });
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
     }
-
     private void processIMC(final InterModProcessEvent event) {
     }
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
     }
-
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
     }
