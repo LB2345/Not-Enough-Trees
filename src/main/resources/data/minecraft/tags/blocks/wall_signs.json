@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "net:poplar_wall_sign",
+    "net:endburst_wall_sign"
+  ]
+}

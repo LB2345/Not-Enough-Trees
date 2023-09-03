@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "net:endburst_log",
+    "net:endburst_wood",
+    "net:stripped_endburst_log",
+    "net:stripped_endburst_wood"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "net:poplar_pressure_plate",
+    "net:endburst_pressure_plate"
+  ]
+}

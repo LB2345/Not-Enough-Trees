@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "net:poplar_log",
+    "net:poplar_wood",
+    "net:stripped_poplar_log",
+    "net:stripped_poplar_wood"
+  ]
+}

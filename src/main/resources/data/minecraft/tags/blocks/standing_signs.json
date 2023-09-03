@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "net:poplar_sign",
+    "net:endburst_sign"
+  ]
+}

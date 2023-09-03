@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "net:block/endburst_slab"
+    },
+    "type=double": {
+      "model": "net:block/endburst_planks"
+    },
+    "type=top": {
+      "model": "net:block/endburst_slab_top"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "net:block/endburst_sign"
+    }
+  }
+}

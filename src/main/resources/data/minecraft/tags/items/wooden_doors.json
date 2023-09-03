@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "net:poplar_door",
+    "net:endburst_door"
+  ]
+}

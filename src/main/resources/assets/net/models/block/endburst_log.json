@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "net:block/endburst_log_top",
+    "side": "net:block/endburst_log"
+  }
+}

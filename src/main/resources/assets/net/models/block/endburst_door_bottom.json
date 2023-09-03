@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom",
+  "textures": {
+    "top": "net:block/endburst_door_top",
+    "bottom": "net:block/endburst_door_bottom"
+  }
+}
