@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "net:block/purpur_lichen_wall",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "net:block/purpur_lichen_wall"
+    },
+    "facing=south": {
+      "model": "net:block/purpur_lichen_wall",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "net:block/purpur_lichen_wall",
+      "y": 270
+    }
+  }
+}
