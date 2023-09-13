@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "net:poplar_sign",
-    "net:endburst_sign"
+    "net:endburst_sign",
+    "net:ebony_sign",
+    "net:blue_mahoe_sign"
   ]
 }

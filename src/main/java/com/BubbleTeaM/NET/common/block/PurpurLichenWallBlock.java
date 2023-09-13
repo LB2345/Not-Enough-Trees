@@ -54,7 +54,6 @@ public class PurpurLichenWallBlock extends Block{
         return blockstate.isFaceSturdy(p_49201_, blockpos, direction);
     }
 
-    @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext p_49198_) {
         BlockState blockstate = super.getStateForPlacement(p_49198_);
         LevelReader levelreader = p_49198_.getLevel();

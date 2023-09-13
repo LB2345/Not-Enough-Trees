@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "net:poplar_leaves",
-    "net:endburst_leaves"
+    "net:endburst_leaves",
+    "net:ebony_leaves",
+    "net:blue_mahoe_leaves",
+    "net:flowering_blue_mahoe_leaves"
     ]
 }

@@ -2,6 +2,8 @@ package com.BubbleTeaM.NET.common.entity;
 
 import com.BubbleTeaM.NET.common.block.NETBlocks;
 import com.BubbleTeaM.NET.common.item.NETItems;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -35,6 +37,9 @@ public class NETBoat extends Boat {
         return switch (this.getModBoatType()) {
             case POPLAR -> NETItems.POPLAR_BOAT.get();
             case ENDBURST -> NETItems.ENDBURST_BOAT.get();
+            case EBONY -> NETItems.EBONY_BOAT.get();
+            case BLUE_MAHOE -> NETItems.BLUE_MAHOE_BOAT.get();
+            case WILLOW -> NETItems.WILLOW_BOAT.get();
         };
     }
 
@@ -53,7 +58,10 @@ public class NETBoat extends Boat {
 
     public static enum Type {
         POPLAR(NETBlocks.POPLAR_PLANKS.get(), "poplar"),
-        ENDBURST(NETBlocks.ENDBURST_PLANKS.get(), "endburst");
+        ENDBURST(NETBlocks.ENDBURST_PLANKS.get(), "endburst"),
+        EBONY(NETBlocks.EBONY_PLANKS.get(), "ebony"),
+        BLUE_MAHOE(NETBlocks.BLUE_MAHOE_PLANKS.get(), "blue_mahoe"),
+        WILLOW(NETBlocks.BLUE_MAHOE_PLANKS.get(), "willow");
 
         private final String name;
         private final Block planks;
@@ -100,5 +108,20 @@ public class NETBoat extends Boat {
     @Override
     public Packet<?> getAddEntityPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);
+    }
+
+    @Override
+    protected void addAdditionalSaveData(CompoundTag nbt)
+    {
+        nbt.putString("type", getModBoatType().getName());
+    }
+
+    @Override
+    protected void readAdditionalSaveData(CompoundTag nbt)
+    {
+        if (nbt.contains("type", Tag.TAG_STRING))
+        {
+            this.entityData.set(DATA_ID_TYPE, Type.byName(nbt.getString("type")).ordinal());
+        }
     }
 }

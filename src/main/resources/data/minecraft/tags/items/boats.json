@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "net:poplar_boat",
-    "net:endburst_boat"
+    "net:endburst_boat",
+    "net:ebony_boat",
+    "net:blue_mahoe_boat"
   ]
 }

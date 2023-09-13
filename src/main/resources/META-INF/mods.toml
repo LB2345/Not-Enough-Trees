@@ -18,8 +18,14 @@ Explore the big world to find every tree kind!
     ordering="NONE"
     side="BOTH"
 [[dependencies.net]]
-    modId="minecraft"
-    mandatory=true
-    versionRange="[1.18.2]"
-    ordering="NONE"
-    side="BOTH"
+modId="minecraft"
+mandatory=true
+versionRange="[1.18.2]"
+ordering="NONE"
+side="BOTH"
+#[[dependencies.net]]
+#modId="terrablender"
+#mandatory=true
+#versionRange="[1.1.0.102]"
+#ordering="NONE"
+#side="BOTH"

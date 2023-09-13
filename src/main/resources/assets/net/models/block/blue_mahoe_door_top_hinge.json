@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_rh",
+  "textures": {
+    "top": "net:block/blue_mahoe_door_top",
+    "bottom": "net:block/blue_mahoe_door_bottom"
+  }
+}

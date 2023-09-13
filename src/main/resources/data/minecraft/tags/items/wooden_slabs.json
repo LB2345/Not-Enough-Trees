@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "net:poplar_slab",
-    "net:endburst_slab"
+    "net:endburst_slab",
+    "net:ebony_slab",
+    "net:blue_mahoe_slab"
   ]
 }

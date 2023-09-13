@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "net:block/blue_mahoe_log",
+    "side": "net:block/blue_mahoe_log"
+  }
+}

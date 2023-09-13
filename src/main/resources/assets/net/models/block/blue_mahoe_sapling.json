@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "net:block/blue_mahoe_sapling"
+  }
+}

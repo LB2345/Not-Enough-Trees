@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "net:poplar_button",
-    "net:endburst_button"
+    "net:endburst_button",
+    "net:ebony_button",
+    "net:blue_mahoe_button"
   ]
 }

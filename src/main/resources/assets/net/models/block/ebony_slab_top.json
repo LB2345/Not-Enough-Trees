@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "net:block/ebony_planks",
+    "top": "net:block/ebony_planks",
+    "side": "net:block/ebony_planks"
+  }
+}

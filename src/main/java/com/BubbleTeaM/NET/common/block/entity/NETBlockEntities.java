@@ -19,7 +19,13 @@ public class NETBlockEntities {
                             NETBlocks.POPLAR_WALL_SIGN.get(),
                             NETBlocks.POPLAR_SIGN.get(),
                             NETBlocks.ENDBURST_WALL_SIGN.get(),
-                            NETBlocks.ENDBURST_SIGN.get()).build(null));
+                            NETBlocks.ENDBURST_SIGN.get(),
+                            NETBlocks.EBONY_WALL_SIGN.get(),
+                            NETBlocks.EBONY_SIGN.get(),
+                            NETBlocks.BLUE_MAHOE_WALL_SIGN.get(),
+                            NETBlocks.BLUE_MAHOE_SIGN.get(),
+                            NETBlocks.WILLOW_WALL_SIGN.get(),
+                            NETBlocks.WILLOW_SIGN.get()).build(null));
 
 
     public static void register(IEventBus eventBus) {

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "net:ebony_log",
+    "net:ebony_wood",
+    "net:stripped_ebony_log",
+    "net:stripped_ebony_wood"
+  ]
+}

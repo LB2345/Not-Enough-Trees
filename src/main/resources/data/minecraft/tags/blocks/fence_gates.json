@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "net:poplar_fence_gate",
-    "net:endburst_fence_gate"
+    "net:endburst_fence_gate",
+    "net:ebony_fence_gate",
+    "net:blue_mahoe_fence_gate"
     ]
 }

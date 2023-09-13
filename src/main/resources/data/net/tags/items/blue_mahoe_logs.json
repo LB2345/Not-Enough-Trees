@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "net:blue_mahoe_log",
+    "net:blue_mahoe_wood",
+    "net:stripped_blue_mahoe_log",
+    "net:stripped_blue_mahoe_wood"
+  ]
+}

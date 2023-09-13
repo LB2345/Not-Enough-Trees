@@ -12,23 +12,21 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = NETMod.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
-public class ColorHandler
-{
+public class ColorHandler {
     @SubscribeEvent
     public static void registerItemColors(ColorHandlerEvent.Item event)
     {
         event.getItemColors().register((stack, tintIndex) -> {
                     BlockState state = ((BlockItem)stack.getItem()).getBlock().defaultBlockState();
                     return event.getBlockColors().getColor(state, null, null, tintIndex); },
-                NETBlocks.POPLAR_LEAVES.get());
+                NETBlocks.POPLAR_LEAVES.get(), NETBlocks.EBONY_LEAVES.get(), NETBlocks.BLUE_MAHOE_LEAVES.get(), NETBlocks.FLOWERING_BLUE_MAHOE_LEAVES.get(), NETBlocks.WILLOW_LEAVES.get());
     }
-
     @SubscribeEvent
     public static void registerBlockColors(ColorHandlerEvent.Block event)
     {
         //Foliage Coloring
         event.getBlockColors().register((state, world, pos, tintIndex) ->
                         world != null && pos != null ? BiomeColors.getAverageFoliageColor(world, pos) : FoliageColor.getDefaultColor(),
-                NETBlocks.POPLAR_LEAVES.get());
+                NETBlocks.POPLAR_LEAVES.get(), NETBlocks.EBONY_LEAVES.get(), NETBlocks.BLUE_MAHOE_LEAVES.get(), NETBlocks.FLOWERING_BLUE_MAHOE_LEAVES.get(), NETBlocks.WILLOW_LEAVES.get());
     }
 }

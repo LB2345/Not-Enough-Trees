@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "#net:poplar_logs",
-    "#net:endburst_logs"
+    "#net:endburst_logs",
+    "#net:ebony_logs",
+    "#net:blue_mahoe_logs"
   ]
 }

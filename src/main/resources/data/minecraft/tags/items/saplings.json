@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "net:poplar_sapling",
-    "net:endburst_sapling"
+    "net:endburst_sapling",
+    "net:ebony_sapling",
+    "net:blue_mahoe_sapling"
   ]
 }

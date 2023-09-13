@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "net:block/blue_mahoe_pressure_plate"
+    },
+    "powered=true": {
+      "model": "net:block/blue_mahoe_pressure_plate_down"
+    }
+  }
+}

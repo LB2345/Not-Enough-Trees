@@ -1,0 +1,7 @@
+{
+  "parent": "net:block/leaves_overlay",
+  "textures": {
+    "leaves": "net:block/flowering_blue_mahoe_leaves",
+    "overlay": "net:block/flowering_blue_mahoe_leaves_overlay"
+  }
+}

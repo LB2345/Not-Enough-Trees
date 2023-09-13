@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "net:poplar_door",
-    "net:endburst_door"
+    "net:endburst_door",
+    "net:ebony_door",
+    "net:blue_mahoe_door"
   ]
 }

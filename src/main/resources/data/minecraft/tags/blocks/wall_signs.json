@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "net:poplar_wall_sign",
-    "net:endburst_wall_sign"
+    "net:endburst_wall_sign",
+    "net:ebony_wall_sign",
+    "net:blue_mahoe_wall_sign"
   ]
 }

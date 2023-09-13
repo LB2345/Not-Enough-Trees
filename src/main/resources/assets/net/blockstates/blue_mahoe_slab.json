@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "net:block/blue_mahoe_slab"
+    },
+    "type=double": {
+      "model": "net:block/blue_mahoe_planks"
+    },
+    "type=top": {
+      "model": "net:block/blue_mahoe_slab_top"
+    }
+  }
+}

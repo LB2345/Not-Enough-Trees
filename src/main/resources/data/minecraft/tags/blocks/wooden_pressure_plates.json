@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "net:poplar_pressure_plate",
-    "net:endburst_pressure_plate"
+    "net:endburst_pressure_plate",
+    "net:ebony_pressure_plate",
+    "net:blue_mahoe_pressure_plate"
   ]
 }

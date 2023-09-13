@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "net:poplar_trapdoor",
-    "net:endburst_trapdoor"
+    "net:endburst_trapdoor",
+    "net:ebony_trapdoor",
+    "net:blue_mahoe_trapdoor"
   ]
 }
